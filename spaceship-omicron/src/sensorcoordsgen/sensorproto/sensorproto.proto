@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "./sensorproto";
+package sensorproto;
+service SensorService {
+    rpc GetSensor(SensorRequest) returns (SensorResponse);
+}
+
+message SensorRequest {
+}
+
+message SensorResponse {
+ double x = 1;
+ double y = 2;
+ double z = 3;
+ string t = 4;
+}
