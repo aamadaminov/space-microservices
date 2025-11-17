@@ -3,9 +3,8 @@ module main
 go 1.25.3
 
 require (
-	github.com/confluentinc/confluent-kafka-go v1.9.2
 	google.golang.org/grpc v1.76.0
-	sensorcoord/sensorproto v0.0.0-00010101000000-000000000000
+	sensorscoordsgen/sensorproto v0.0.0-00010101000000-000000000000
 )
 
 require (
@@ -16,4 +15,4 @@ require (
 	google.golang.org/protobuf v1.36.10 // indirect
 )
 
-replace sensorcoord/sensorproto => ./sensorproto
+replace sensorscoordsgen/sensorproto => ./sensorproto
