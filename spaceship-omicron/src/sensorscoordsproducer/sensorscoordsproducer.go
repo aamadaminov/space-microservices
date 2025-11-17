@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	pb "sensorcoord/sensorproto"
+	pb "sensorscoordsproducer/sensorproto"
 	"time"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"

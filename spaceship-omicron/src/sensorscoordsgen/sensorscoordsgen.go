@@ -5,7 +5,7 @@ import (
 	"log"
 	"math/rand/v2"
 	"net"
-	pb "sensorcoord/sensorproto"
+	pb "sensorscoordsgen/sensorproto"
 	"time"
 
 	"google.golang.org/grpc"
