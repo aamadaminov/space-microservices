@@ -1,0 +1,35 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.10.2
+    container_name: ch-server-spaceship-omicron
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+#      - clickhouse-logs:/var/log/clickhouse-server
+#      - ./config/config.xml:/etc/clickhouse-server/config.d/docker.xml
+#      - ./config/users.xml:/etc/clickhouse-server/users.d/docker.xml
+    environment:
+      CLICKHOUSE_USER: username
+      CLICKHOUSE_PASSWORD: password
+      CLICKHOUSE_DB: spaceshipomicron_db
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+
+volumes:
+  clickhouse_data:
+
+
+
+#docker run --name clickhouse-course -e CLICKHOUSE_DB=learn_db -e CLICKHOUSE_USER=username -e CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1 -e CLICKHOUSE_PASSWORD=password -p 8123:8123 -p 9000:9000/tcp -d -v clickhouse-logs:/var/log/clickhouse-server -v clickhouse-data:/var/lib/clickhouse clickhouse:25.4
+
